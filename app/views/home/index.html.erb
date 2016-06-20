@@ -20,7 +20,7 @@
               <%= p.title %>
             </span>
             <br>
-            <% unless p.image_path.empty? %>
+            <% unless p.image_path.nil? %>
             <img src="<%= p.image_path %>" max-width: 500px; height: auto;>
             <% end %>
             <br>
