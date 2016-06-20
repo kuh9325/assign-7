@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  devise_for :accounts
+  root to: 'home#index'
   get 'home/index'
   post 'home/write'
   post 'home/comment_write'

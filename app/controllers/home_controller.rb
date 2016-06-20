@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.all.reverse
+    if account_signed_in?
+      @posts = Post.all.reverse
+    else
+      redirect_to '/accounts/sign_in'
+    end
   end
 
   def comment_write
