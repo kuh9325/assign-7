@@ -1,10 +1,8 @@
 class HomeController < ApplicationController
+  before_action :require_login
+  
   def index
-    if account_signed_in?
-      @posts = Post.all.reverse
-    else
-      redirect_to '/accounts/sign_in'
-    end
+    @posts = Post.all.reverse
   end
 
   def comment_write
@@ -20,6 +18,7 @@ class HomeController < ApplicationController
     post = Post.new
     post.title = params[:title]
     post.content = params[:content]
+    post.account = current_account
 
     uploader = ShooterUploader.new
     file = params[:pic]

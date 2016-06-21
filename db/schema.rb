@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160620163416) do
     t.string   "title"
     t.text     "content"
     t.string   "image_path", default: ""
+    t.integer  "account_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end

@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string  :title
       t.text    :content
       t.string  :image_path,  default: ""
+      t.integer :account_id
 
       t.timestamps null: false
     end
